@@ -6,6 +6,15 @@ Bidirectional prose ↔ AISP symbolic notation conversion based on the Rosetta S
 [![Documentation](https://docs.rs/rosetta-aisp/badge.svg)](https://docs.rs/rosetta-aisp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Installation
+
+```toml
+[dependencies]
+rosetta-aisp = "0.2"
+```
+
+For CLI usage and LLM-powered fallback, see [rosetta-aisp-llm](https://github.com/epiphytic/rosetta-aisp-llm).
+
 ## Features
 
 - **70+ Rosetta Stone mappings** for quantifiers, logic, sets, types, and more
