@@ -1,0 +1,43 @@
+[package]
+name = "rosetta-aisp"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+authors = ["epiphytic"]
+description = "Bidirectional prose ↔ AISP symbolic notation conversion based on the Rosetta Stone mappings"
+license = "MIT"
+repository = "https://github.com/epiphytic/rosetta-aisp"
+documentation = "https://docs.rs/rosetta-aisp"
+readme = "README.md"
+keywords = ["aisp", "symbolic", "conversion", "nlp", "ai"]
+categories = ["text-processing", "parsing", "development-tools"]
+
+[lib]
+name = "rosetta_aisp"
+path = "src/lib.rs"
+
+[dependencies]
+# AISP validation
+aisp = { version = "0.1", features = ["serde"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Regex for pattern matching
+regex = "1.10"
+lazy_static = "1.4"
+
+# Date/time for document headers
+chrono = { version = "0.4", features = ["serde"] }
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "conversion"
+harness = false
+
+[profile.release]
+opt-level = 3
+lto = true
