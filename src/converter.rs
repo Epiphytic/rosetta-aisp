@@ -59,6 +59,9 @@ pub struct ConversionResult {
     pub tier: ConversionTier,
     /// Token statistics
     pub tokens: TokenStats,
+    /// Whether LLM fallback was used (for gear-core integration)
+    #[serde(default)]
+    pub used_fallback: bool,
 }
 
 /// AISP Converter
@@ -177,6 +180,7 @@ impl AispConverter {
                 output: 0,
                 ratio: 0.0,
             },
+            used_fallback: false,
         }
     }
 
@@ -223,6 +227,7 @@ impl AispConverter {
                 output: 0,
                 ratio: 0.0,
             },
+            used_fallback: false,
         }
     }
 
@@ -281,6 +286,7 @@ impl AispConverter {
                 output: 0,
                 ratio: 0.0,
             },
+            used_fallback: false,
         }
     }
 
